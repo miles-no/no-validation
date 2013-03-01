@@ -50,8 +50,10 @@ module.exports = (function(){
             return sum;
         };
 
-        var checksum1 = 11 - (sum(birthNumber, [3, 7, 6, 1, 8, 9, 4, 5, 2]) % 11);
-        var checksum2 = 11 - (sum(birthNumber, [5, 4, 3, 2, 7, 6, 5, 4, 3, 2]) % 11);
+        var checksum1 = 11 - (_sum(birthNumber, [3, 7, 6, 1, 8, 9, 4, 5, 2]) % 11);
+        if (checksum1 === 11) checksum1 = 0;
+        var checksum2 = 11 - (_sum(birthNumber, [5, 4, 3, 2, 7, 6, 5, 4, 3, 2]) % 11);
+        if (checksum2 === 11) checksum2 = 0;
         return checksum1 === parseInt(birthNumber.charAt(9), 10) 
                 && checksum2 === parseInt(birthNumber.charAt(10), 10);
     };
