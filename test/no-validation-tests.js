@@ -33,7 +33,7 @@ buster.testCase("Organization number validation", {
 });
 
 buster.testCase("Birth number validation", {
-    "should not accept organization numbers of less than 11 digits": function () {
+    "should not accept birth numbers of less than 11 digits": function () {
         refute(validation.birthNumber('2104986822'));
     },
     "should not accept invalid birth numbers": function () {
